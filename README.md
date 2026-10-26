@@ -11,6 +11,8 @@ It is not a magic speed hack. It is a repeatable way to:
 5. Verify the multi-volume archive with 7-Zip before extracting.
 
 > **Measured in one real run (2026-10-26):** 33 RAR volumes, 31.26 GB, throughput went from **~7.8 MB/s to ~44 MB/s** (peak 49 MB/s, about **5.6×**), with `7z t` reporting `Everything is Ok`.
+>
+> This repository contains only original scripts and documentation. It does **not** include game files, cracks, direct links, cookies, account data, or copyrighted content. Use it only with content you are authorized to download.
 
 ---
 
@@ -122,13 +124,13 @@ Use `-WhatIf` to preview without changing anything:
 ```powershell
 # Verify only (recommended first)
 .\scripts\verify-and-extract.ps1 `
-  -ArchiveDir 'E:\download\Your.Game.CHS.Green' `
+  -ArchiveDir 'E:\download\Your.Package' `
   -VerifyOnly
 
 # Verify + extract
 .\scripts\verify-and-extract.ps1 `
-  -ArchiveDir 'E:\download\Your.Game.CHS.Green' `
-  -Destination 'E:\Games\Your.Game.CHS.Green' `
+  -ArchiveDir 'E:\download\Your.Package' `
+  -Destination 'E:\Games\Your.Package' `
   -Extract
 ```
 

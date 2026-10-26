@@ -17,7 +17,7 @@ All values below are from one real run on **2026-10-26**. They are not guarantee
 
 ## Archive
 
-- Name: `3DMGAME_Call_of_Duty_HQ.CHS.Green`
+- Type: multi-part RAR5 test archive (identity intentionally omitted)
 - 33 RAR5 volumes
 - Compressed size: `33,569,168,309` bytes ≈ **31.26 GiB**
 - Uncompressed size: `34,754,452,770` bytes ≈ **32.37 GiB**
