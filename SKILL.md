@@ -31,6 +31,25 @@ Do **not** use it to:
 4. All parts of a multi-volume archive are in the same folder.
 5. 7-Zip is installed; this repo assumes `E:\7-Zip\7z.exe` unless overridden.
 
+## LinkSwift integration
+
+This skill is designed to be used **with LinkSwift**, not as a replacement for it:
+
+- **LinkSwift** obtains Quark's direct links, handles Cookie/User-Agent/Referer, and pushes the tasks to Motrix/aria2.
+- **This skill** tunes the aria2 tasks that LinkSwift created: `split`, connections, concurrency, monitoring, verification, and extraction.
+
+Setup:
+
+1. Install Tampermonkey and LinkSwift in Edge/Chrome.
+2. In LinkSwift's Aria2/RPC settings, set:
+   - RPC URL: `http://127.0.0.1:16800/jsonrpc`
+   - RPC secret: the secret shown in Motrix settings
+3. Open `pan.quark.cn`, select the files/folder, click **下载助手**, and choose **Aria2 推送**.
+4. Confirm the tasks appear in Motrix and start downloading.
+5. Run `scripts/tune-aria2.ps1` to apply the multi-connection tuning.
+
+If LinkSwift's connection test fails, check that Motrix is running, the RPC port/secret match, and Windows Firewall is not blocking localhost RPC. If tasks appear but stall, refresh the Quark direct link and avoid switching proxies mid-download.
+
 **Never echo or commit the RPC secret.** Prefer:
 
 ```powershell

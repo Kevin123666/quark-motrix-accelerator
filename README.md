@@ -43,6 +43,29 @@ This is an empirical observation, not a claim about Quark's internal implementat
 
 ---
 
+## LinkSwift integration
+
+This project is meant to be used **together with LinkSwift**:
+
+- **LinkSwift** gets the Quark direct links, handles the required Cookie/User-Agent/Referer headers, and pushes the tasks to Motrix/aria2.
+- **This skill** tunes the aria2 tasks LinkSwift created: `split`, connections per task, concurrency, monitoring, verification, and extraction.
+
+Setup:
+
+1. Install Tampermonkey + LinkSwift in Edge/Chrome.
+2. In LinkSwift's Aria2/RPC settings, set:
+   - RPC URL: `http://127.0.0.1:16800/jsonrpc`
+   - RPC secret: the secret shown in Motrix settings
+3. Open `pan.quark.cn`, select the files/folder, click **下载助手**, and choose **Aria2 推送**.
+4. Confirm the tasks appear in Motrix.
+5. Run `.\scripts\tune-aria2.ps1 -Split 64 -MaxConcurrentDownloads 16`.
+
+If LinkSwift's connection test fails, verify that Motrix is running, the RPC port/secret match, and localhost RPC is not blocked by Windows Firewall. If tasks appear but stall, refresh the Quark direct link and do not switch proxies mid-download.
+
+This skill does **not** replace LinkSwift, and it does not create Quark direct links by itself. Browser downloads are not suitable for this tuning because they do not expose aria2's per-task `split` setting.
+
+---
+
 ## Quick start
 
 ### 1. Clone / copy this folder
