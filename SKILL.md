@@ -33,6 +33,8 @@ Do **not** use it to:
 
 ## LinkSwift integration
 
+> 中文说明：LinkSwift 负责从夸克取直链并推送到 Motrix/aria2；本 skill 负责调 aria2 的连接数、并发、监控、校验和解压。两者是搭配关系，不是替代关系。
+
 This skill is designed to be used **with LinkSwift**, not as a replacement for it:
 
 - **LinkSwift** obtains Quark's direct links, handles Cookie/User-Agent/Referer, and pushes the tasks to Motrix/aria2.
