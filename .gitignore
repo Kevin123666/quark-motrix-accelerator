@@ -1,0 +1,12 @@
+# Local secrets and logs
+*.bak
+*.log
+*.tmp
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PowerShell
+*.ps1xml
